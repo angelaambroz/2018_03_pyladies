@@ -2,15 +2,22 @@
 ### DC PyLadies | Thursday, 22 March 2018
 #### [http://www.twitter.com/angelaambroz](@angelaambroz)
 
-Welcome! 
+O hai!
 =======
-# O hai!
 
 These are the tutorial materials for the [22 March 2018 DC PyLadies meetup](https://www.meetup.com/dc-pyladies/events/248439830/), _An introduction to the data science workflow in Python_.
 
 These notebooks can be viewed and interacted with [Binder](https://mybinder.org/):  [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/angelaambroz/2018_03_pyladies/master?filepath=0_Introduction.ipynb) (note: this may take a while to load, as it installs all the libraries)
 
 You can also view these notebooks here in GitHub (without interaction).
+
+You can _also_ download these notebooks and install everything on your local machine. To do so, choose a directory where you want to put this (`path/of/your/choosing`), go to that directory (`cd path/of/your/choosing`), clone these materials (`git clone`), install the Python packages with `pip`, and then launch the Jupyter notebooks (`jupyter notebook`).
+```
+cd path/of/your/choosing
+git clone git@github.com:angelaambroz/2018_03_pyladies.git
+pip install -r requirements.txt
+jupyter notebook
+```
 
 ## Table of Contents
 
