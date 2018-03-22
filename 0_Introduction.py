@@ -73,7 +73,7 @@ df.head()
 # 2. a query in some dialect of SQL (e.g. `SELECT * FROM SOME_TABLE`)
 # 3. a way to connect Python to the database!
 # 
-# We won't cover (1) and (2) today (though I'll include some learning materials in TODO), but there are lots of ways to do (3). I use the [`sqlalchemy`](https://www.sqlalchemy.org/) library. But there are others ([lots](https://pypi.python.org/pypi?:action=search&term=sql)!), and many offer the same basic functionality - tomayto, tomahto.
+# We won't cover (1) and (2) today (though I'll include some learning materials in [3_Etc.ipynb](3_Etc.ipynb)), but there are lots of ways to do (3). I use the [`sqlalchemy`](https://www.sqlalchemy.org/) library. But there are others ([lots](https://pypi.python.org/pypi?:action=search&term=sql)!), and many offer the same basic functionality - tomayto, tomahto.
 # 
 # #### Local vs. remote database
 # 
