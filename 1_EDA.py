@@ -26,7 +26,7 @@
 # 
 # Here's a good [walkthrough of the object-ness of `matplotlib` charts, and how to use it well](http://pbpython.com/effective-matplotlib.html), and [another one](https://realpython.com/blog/python/python-matplotlib-guide/). No need to go through these now, though! You can get pretty far with just the tips above!
 
-# In[14]:
+# In[1]:
 
 
 # Tell Jupyter to display matplotlib plots in your notebook
@@ -49,7 +49,7 @@ plt.style.use('bmh')
 # 
 # Let's explore the Duke Greek life dataset.
 
-# In[29]:
+# In[2]:
 
 
 # Loading the Greek life data
@@ -65,21 +65,21 @@ df.head()
 # - How many had a merit scholarship?
 # - Where are students from?
 
-# In[30]:
+# In[3]:
 
 
 # How many students are there?
 len(df)
 
 
-# In[31]:
+# In[4]:
 
 
 # How many students are in a Greek organization?
 df['Greek Organization'].value_counts()
 
 
-# In[32]:
+# In[5]:
 
 
 # How many Greek orgs are there?
@@ -93,7 +93,7 @@ df['Greek Organization'].nunique() - 1
 len(df[df['Greek Organization'] != "None"]) / len(df)
 
 
-# In[34]:
+# In[6]:
 
 
 # What's the distribution of high school tuitions?
@@ -106,7 +106,7 @@ df['Tuition of High School'].describe()
 # 
 # Let's try to make it numeric with `pandas`'s method, `to_numeric()`:
 
-# In[35]:
+# In[7]:
 
 
 pd.to_numeric(df['Tuition of High School'])
@@ -114,7 +114,7 @@ pd.to_numeric(df['Tuition of High School'])
 
 # The comma in "16,600" is the problem. Let's try to correct it and see if that helps.
 
-# In[36]:
+# In[8]:
 
 
 df['Tuition of High School'].replace(to_replace="16,600", value="16600", inplace=True)
@@ -123,7 +123,7 @@ pd.to_numeric(df['Tuition of High School'])
 
 # Hmmm. Still not finished. Also, it's probably not efficient to manually correct for every comma in every column. We can use a shortcut - Python's string methods! These are also available to us in `pandas`:
 
-# In[37]:
+# In[9]:
 
 
 pd.to_numeric(df['Tuition of High School'].str.replace(',',''))
@@ -131,7 +131,7 @@ pd.to_numeric(df['Tuition of High School'].str.replace(',',''))
 
 # That worked! But we didn't actually change the column. Instead, `pandas` just returned a new Series for us (a Series is a column in a pandas DataFrame). Let's replace the column itself:
 
-# In[38]:
+# In[10]:
 
 
 df['Tuition of High School'] = pd.to_numeric(df['Tuition of High School'].str.replace(',',''))
@@ -140,17 +140,23 @@ df['Tuition of High School'].describe()
 
 # Perfect! Now we can use one of `pandas`'s built-in plotting methods (yes, it has a few! they're built on top of `matplotlib`) to see a frequency histogram of this data.
 
-# In[39]:
+# In[12]:
 
 
 df['Tuition of High School'].hist()
+
+
+# In[13]:
+
+
+df['Tuition of High School'].isnull().value_counts()
 
 
 # Let's modify this. Let's add:
 # - More bins! I like more granular histograms.
 # - A vertical line for the average tuition.
 
-# In[40]:
+# In[14]:
 
 
 df['Tuition of High School'].hist(bins=20)
